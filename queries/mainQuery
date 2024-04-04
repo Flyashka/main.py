@@ -1,0 +1,8 @@
+query {
+  constants {
+    heroes {
+      id
+      displayName
+    }
+  }
+}

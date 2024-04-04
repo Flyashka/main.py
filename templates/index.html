@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Список героев</title>
+</head>
+<body>
+    <h1>Список героев</h1>
+    <div class="container_radiant">
+        {% for col in range(5) %}
+        <div class="column" data-col="{{ col }}">
+            {% for hero in heroes %}
+            <div class="hero" data-index="{{ loop.index0 }}">
+                <img src='https://cdn.stratz.com/images/dota2/heroes/{{hero.shortName}}_horz.png'
+                     alt="{{ hero.displayName }}">
+                <!--<p>{{ hero.displayName }}</p>-->
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="container_dire">
+        {% for col in range(5) %}
+        <div class="column" data-col="{{ col }}">
+            {% for hero in heroes %}
+            <div class="hero" data-index="{{ loop.index0 }}">
+                <img src='https://cdn.stratz.com/images/dota2/heroes/{{hero.shortName}}_horz.png'
+                     alt="{{ hero.displayName }}">
+                <!--<p>{{ hero.displayName }}</p>-->
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <script src="static/js/chooseHero.js"></script>
+</body>
+</html>
