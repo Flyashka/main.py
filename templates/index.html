@@ -6,31 +6,38 @@
 </head>
 <body>
     <h1>Список героев</h1>
-    <div class="container_radiant">
-        {% for col in range(5) %}
-        <div class="column" data-col="{{ col }}">
-            {% for hero in heroes %}
-            <div class="hero" data-index="{{ loop.index0 }}">
-                <img src='https://cdn.stratz.com/images/dota2/heroes/{{hero.shortName}}_horz.png'
-                     alt="{{ hero.displayName }}">
-                <!--<p>{{ hero.displayName }}</p>-->
-            </div>
-            {% endfor %}
-        </div>
-        {% endfor %}
+    <div claas="name_table">
+    <h2 align=left> Силы света</h2>
+    <h2 align=right>Силы тьмы</h2>
     </div>
-    <div class="container_dire">
-        {% for col in range(5) %}
-        <div class="column" data-col="{{ col }}">
-            {% for hero in heroes %}
-            <div class="hero" data-index="{{ loop.index0 }}">
-                <img src='https://cdn.stratz.com/images/dota2/heroes/{{hero.shortName}}_horz.png'
-                     alt="{{ hero.displayName }}">
-                <!--<p>{{ hero.displayName }}</p>-->
+    <div class="container">
+        <button id="theme-toggle">Переключить тему</button>
+        <div class="container_radiant">
+            {% for col in range(5) %}
+            <div class="column" data-col="{{ col }}">
+                {% for hero in heroes %}
+                <div class="hero" data-index="{{ loop.index0 }}">
+                    <img src='https://cdn.stratz.com/images/dota2/heroes/{{hero.shortName}}_horz.png'
+                         alt="{{ hero.displayName }}">
+                </div>
+                {% endfor %}
             </div>
             {% endfor %}
         </div>
-        {% endfor %}
+    </div>
+    <div class="container">
+        <div class="container_dire">
+            {% for col in range(5) %}
+            <div class="column" data-col="{{ col }}">
+                {% for hero in heroes %}
+                <div class="hero" data-index="{{ loop.index0 }}">
+                    <img src='https://cdn.stratz.com/images/dota2/heroes/{{hero.shortName}}_horz.png'
+                         alt="{{ hero.displayName }}">
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
     </div>
 
     <script src="static/js/chooseHero.js"></script>

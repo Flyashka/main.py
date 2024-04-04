@@ -1,23 +1,79 @@
-.container_radiant {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: hidden;
-    height: 50vh; /* Половина высоты экрана */
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
+body {
+    transition: background-color 0.2s ease; /* Плавное изменение цвета фона при переключении темы */
+}
+        h1 {
+            text-align: center; /* Выравниваем заголовок по центру */
+            background-color: #333; /* Добавляем серый фон заголовка */
+            color: white; /* Устанавливаем белый цвет текста */
+
+        }
+.dark-theme {
+    background-color: #333; /* Цвет фона для тёмной темы */
+    color: #fff; /* Цвет текста для тёмной темы */
 }
 
+.light-theme {
+    background-color: #f7f7f7; /* Цвет фона для светлой темы */
+    color: #343; /* Цвет текста для светлой темы */
+}
+.name_table {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Это выравнивание по верхнему краю */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button#theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Увеличиваем тень при наведении */
+}
+
+
+.container_radiant,
 .container_dire {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: hidden;
     height: 50vh; /* Половина высоты экрана */
     position: absolute;
-    top: 50%;
-    left: 80%;
+    top: 70%;
     transform: translate(-50%, -50%);
+}
+
+.container_radiant {
+    left: 20%;
+}
+
+.container_dire {
+    left: 80%;
+}
+
+.container_radiant,
+.container_dire {
+    padding: 10px; /* Добавляем отступы для контейнеров */
+    border-radius: 10px; /* Закругляем углы контейнеров */
+    background-color: #f7f7f7; /* Цвет фона контейнеров */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень для контейнеров */
+    transition: box-shadow 0.3s ease; /* Плавное изменение тени при наведении */
+}
+
+.container_radiant:hover,
+.container_dire:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Увеличиваем тень при наведении */
 }
 
 .column {
@@ -27,16 +83,26 @@
     text-align: center;
     white-space: nowrap;
     overflow-y: auto; /* Добавляем вертикальную прокрутку */
-    max-height: 100%; /* Ограничиваем высоту столбца по содержимому */
-    margin-right: 10px; /* Добавляем небольшой отступ между столбцами */
+    max-height: 150%; /* Ограничиваем высоту столбца по содержимому */
+    margin-right: 20px; /* Добавляем небольшой отступ между столбцами */
     scrollbar-width: none;
+    background-color: #fff; /* Цвет фона столбцов */
+    border-radius: 5px; /* Закругляем углы столбцов */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень для столбцов */
+    transition: box-shadow 0.3s ease; /* Плавное изменение тени при наведении */
 }
 
-.hero {
-    margin: 10px 0;
+.column:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .hero img {
     width: 50px;
     height: auto;
+    border-radius: 10%; /* Закругляем углы, чтобы сделать изображение круглым */
+    transition: transform 0.3s ease; /* Добавляем плавный переход */
+}
+
+.hero img:hover {
+    transform: scale(1.2); /* Увеличиваем изображение на 20% при наведении */
 }

@@ -49,3 +49,13 @@ for (const [columnIndex, selectedHeroesArray] of selectedHeroes.entries()) {
         selectedHeroesArray.shift();
     }
 }
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+const containers = document.querySelectorAll('.container');
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-theme'); // Переключаем класс dark-theme на элементе body
+    containers.forEach(container => {
+        container.classList.toggle('dark-theme'); // Переключаем класс dark-theme на каждом контейнере
+    });
+});
